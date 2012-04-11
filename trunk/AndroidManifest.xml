@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="instant.bazinga" android:versionCode="1" android:versionName="1.0">
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<!-- app activity -->
+		<activity android:name=".bazinga" android:label="@string/app_name"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<!-- widget -->
+		<receiver android:name=".widget" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+				<!-- activity called by the widget -->
+				<action android:name="android.appwidget.action.ACTION_WIDGET" />
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider"
+				android:resource="@xml/bazinga_widget" />
+		</receiver>
+	</application>
+	<uses-sdk android:minSdkVersion="3" />
+</manifest> 
